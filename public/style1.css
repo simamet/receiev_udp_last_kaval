@@ -1,0 +1,259 @@
+#boxes{
+  width:100%;
+  margin:auto;
+  text-align: center;
+  display:inline-block;
+}
+
+#btns{
+  padding:20px;
+  background:#228de6;
+  margin-bottom:20px;
+}
+
+#btns button{
+  background:#fff;
+  padding:5px 10px;
+  border:0;
+}
+
+#btns .fa{
+  font-size:30px;
+}
+
+#btns .fa-play-circle{
+  color:green;
+}
+
+#btns .fa-pause-circle{
+  color:red;
+}
+
+.boxong{
+  /*position: relative;*/
+  width:auto;
+  height:auto;
+  margin:20px;
+  display:inline-block;
+}
+
+.frame{
+  position:absolute;
+  left:0px;
+  top:0px;
+}
+
+.denah_kaval{
+  position:absolute;
+  left:85px;
+  top:100px;
+}
+
+.boxong_kapal{
+  position: absolute;
+  left: 110px;
+  top: 260px;
+}
+
+.depan_kapal{
+  position: absolute;
+  left: 525px;
+  top: 90px;
+}
+
+.samping_kapal{
+  position: absolute;
+  left: 280px;
+  top: 260px;
+}
+.battery{
+  position: absolute;
+  left: 322px;
+  top: 440px;
+}
+.bensin{
+  position: absolute;
+  left: 216px;
+  top: 440px;
+}
+.genset{
+  position: absolute;
+  left: 540px;
+  top: 440px;
+}
+.overlord{
+  position: absolute;
+  right: 700px;
+  top: 50px;
+}
+.door{
+  position: absolute;
+  left: 120px;
+  top: 440px;
+}
+.pln{
+  position: absolute;
+  left: 428px;
+  top: 440px;
+}
+.garis_IMU{
+  position:absolute;
+  left: 80px;
+  top: 336px;
+}
+
+.garis_overweight{
+  position:absolute;
+  left: 516px;
+  top: 177px;
+}
+
+.range__wrapper {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 400px;
+  height:400px;
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 0 0 100px rgba(0, 0, 0, 0.2);
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.range__input {
+  display: none;
+}
+
+.range__slider {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.range__slider__path {
+  fill: #228de6;
+}
+
+.range__marks__path {
+  fill: none;
+  stroke: inherit;
+  stroke-width: 1px;
+}
+
+.range__marks__pink {
+  stroke: #228de6;
+}
+
+.range__marks__white {
+  stroke: white;
+}
+
+.range__values {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  display:inline-block;
+}
+
+.range__value {
+  box-sizing: border-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  padding: 40px 30px;
+}
+
+.range__value--top {
+  position: absolute;
+  right:0px;
+  bottom:0px;
+  bottom: 100%;
+  color: #228de6;
+}
+
+.range__value--bottom {
+  position: absolute;
+  color: white;
+  top:120px;
+  left:0px;
+}
+
+.range__value__number {
+  font-size: 10px;
+  margin: 0 10px;
+}
+
+.range__value__number--top {
+  -webkit-transform-origin: 100% 100%;
+      -ms-transform-origin: 100% 100%;
+          transform-origin: 100% 100%;
+}
+
+.range__value__number--bottom {
+  -webkit-transform-origin: 100% 0;
+      -ms-transform-origin: 100% 0;
+          transform-origin: 100% 0;
+}
+
+.range__value__text {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-size: 13px;
+  text-transform: uppercase;
+}
+
+.range__value__text span:first-child {
+  margin-bottom: 3px;
+}
+
+.range__value__text--top {
+  -webkit-align-self: flex-end;
+      -ms-flex-item-align: end;
+          align-self: flex-end;
+  margin-bottom: 13px;
+}
+
+.range__value__text--bottom {
+  margin-top: 10px;
+}
+
+.overweight_text {
+  position: absolute;
+  color: white;
+  top:204px;
+  left:522px;
+}
+
+.roll {
+  position: absolute;
+  color: white;
+  top:368px;
+  left:100px;
+}
+.roll_dt {
+  position: absolute;
+  color: white;
+  top:368px;
+  left:159px;
+}
+
+.pitch{
+  position: absolute;
+  color: white;
+  top: 100px;
+  left:100px;
+}

@@ -1,0 +1,23 @@
+{
+  "name": "receiev-udp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "udp.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "buffer": "^5.4.3",
+    "dgram": "^1.0.1",
+    "express": "^4.17.1",
+    "hotkeys-js": "^3.7.3",
+    "jimp": "^0.8.5",
+    "jquery": "^3.4.1",
+    "key-events": "^0.1.1",
+    "keypress": "^0.2.1",
+    "pug": "^2.0.4",
+    "socket.io": "^2.3.0"
+  }
+}

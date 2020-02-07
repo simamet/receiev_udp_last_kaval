@@ -1,0 +1,433 @@
+#boxes{
+  width:100%;
+  margin:auto;
+  text-align: center;
+  display:inline-block;
+}
+
+#btns{
+  padding:20px;
+  background:#228de6;
+  margin-bottom:20px;
+}
+
+#btns button{
+  background:#fff;
+  padding:5px 10px;
+  border:0;
+}
+
+#btns .fa{
+  font-size:30px;
+}
+
+#btns .fa-play-circle{
+  color:green;
+}
+
+#btns .fa-pause-circle{
+  color:red;
+}
+
+.boxong{
+  /*position: relative;*/
+  width:auto;
+  height:auto;
+  margin:20px;
+  display:inline-block;
+}
+
+.belakang{
+  position: absolute;
+  left: 100px;
+  top: 260px;
+}
+.alrt_belakang{
+  position: absolute;
+  left: 100px;
+  top: 260px;
+}
+.samping{
+  position: absolute;
+  left: 280px;
+  top: 260px;
+}
+.alrt_samping{
+  position: absolute;
+  left: 280px;
+  top: 260px;
+}
+.denah{
+  position: absolute;
+  left: 85px;
+  top: 100px;
+}
+.pintu_denah1{
+  position: absolute;
+  left: 242px;
+  top: 186px;
+}
+.pintu_denah{
+  position: absolute;
+  left: 242px;
+  top: 91px;
+}
+.bbm_kiri{
+  position: absolute;
+  left: 336px;
+  top: 99px;
+}
+.bbm_kanan{
+  position: absolute;
+  left: 336px;
+  top: 185px;
+}
+
+
+.over{
+  position: absolute;
+  left: 525px;
+  top: 90px;
+}
+.bensin{
+  position: absolute;
+  left: 205px;
+  top: 440px;
+}
+.bensin_alrt{
+  position: absolute;
+  left: 205px;
+  top: 440px;
+}
+.genset{
+  position: absolute;
+  left: 515px;
+  top: 456px;
+}
+.genset_alrt
+{
+  position: absolute;
+  left: 515px;
+  top: 456px;
+}
+.overlord{
+  position: absolute;
+  right: 700px;
+  top: 50px;
+}
+.door{
+  position: absolute;
+  left: 125px;
+  top: 445px;
+}
+.door_alrt{
+  position: absolute;
+  left: 125px;
+  top: 445px;
+}
+.pln{
+  position: absolute;
+  left: 428px;
+  top: 457px;
+}
+.pln_alrt{
+  position: absolute;
+  left: 428px;
+  top: 457px;
+}
+.aki{
+  position: absolute;
+  left: 341px;
+  top: 456px;
+}
+.aki_alrt{
+  position: absolute;
+  left: 341px;
+  top: 456px;
+}
+.alrt{
+  position: absolute;
+  right:96px;
+  top: 147px;
+}
+.stts{
+  position: absolute;
+  color: BLACK;
+  right: 273px;
+  top: 259px;
+}
+.st_gxkn{
+  position: absolute;
+  color: white;
+  right: 153px;
+  top: 283px;
+}
+.st_gxkr{
+  position: absolute;
+  color: white;
+  right: 167px;
+  top: 283px;
+}
+.st_gyd{
+  position: absolute;
+  color: white;
+  right: 134px;
+  top: 300px;
+}
+.st_gyb{
+  position: absolute;
+  color: white;
+  right: 114px;
+  top: 300px;
+}
+.st_pintu{
+  position: absolute;
+  color: white;
+  right: 175px;
+  top: 317px;
+}
+.st_bbm{
+  position: absolute;
+  color: white;
+  right: 201px;
+  top: 334px;
+}
+.rk{
+  position: absolute;
+  color: black;
+  right: 245px;
+  top: 417px;
+}
+.rk_kr{
+  position: absolute;
+  color: red;
+  right: 213px;
+  top: 434px;
+}
+.rk_kn{
+  position: absolute;
+  color: red;
+  right: 195px;
+  top: 434px;
+}
+.rk_d{
+  position: absolute;
+  color: red;
+  right: 195px;
+  top: 451px;
+}
+.rk_b{
+  position: absolute;
+  color: red;
+  right: 174px;
+  top: 451px;
+}
+.rk_p{
+  position: absolute;
+  color: red;
+  right: 172px;
+  top: 468px;
+}
+.rk_bbm{
+  position: absolute;
+  color: red;
+  right: 220px;
+  top: 485px;
+}
+
+
+.form{
+  position: absolute;
+  right: 106px;
+  top: 92px;
+}
+.ofx{
+  position: absolute;
+  color: black;
+  right: 270px;
+  top: 147px;
+}
+.ofxdt{
+  position: absolute;
+  color: black;
+  left: 782px;
+  top: 147px;
+}
+.gfx{
+  position: absolute;
+  color: black;
+  left: 701px;
+  top: 188px;
+}
+.gfxdt{
+  position: absolute;
+  color: black;
+  left: 770px;
+  top: 188px;
+}
+
+
+.overweight_text {
+  position: absolute;
+  color: white;
+  top:220px;
+  left:522px;
+}
+.roll {
+  position: absolute;
+  color: white;
+  top:394px;
+  left:100px;
+}
+.pitch {
+  position: absolute;
+  color: white;
+  top:394px;
+  left:400px;
+}
+.garis_IMU{
+  position:absolute;
+  left: 80px;
+  top: 336px;
+}
+.garis_over{
+  position:absolute;
+  left: 516px;
+  top: 177px;
+}
+.roll_dt {
+  position: absolute;
+  color: white;
+  top:394px;
+  left:155px;
+}
+.pitch_dt {
+  position: absolute;
+  color: white;
+  top:394px;
+  left:460px;
+}
+.over_dt {
+  position: absolute;
+  color: white;
+  top:240px;
+  left:552px;
+}
+
+.range__wrapper {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 32px;
+  height:10px;
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 0 0 100px rgba(0, 0, 0, 0.2);
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.range__input {
+  display: none;
+}
+
+.range__slider {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.range__slider__path {
+  fill: #228de6;
+}
+
+.range__marks__path {
+  fill: none;
+  stroke: inherit;
+  stroke-width: 1px;
+}
+
+.range__marks__pink {
+  stroke: #228de6;
+}
+
+.range__marks__white {
+  stroke: white;
+}
+
+.range__values {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  display:inline-block;
+}
+
+.range__value {
+  box-sizing: border-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  padding: 40px 30px;
+}
+
+.range__value--top {
+  position: absolute;
+  bottom: 100%;
+  color: #228de6;
+}
+
+.range__value--bottom {
+  color: black;
+}
+
+.range__value__number {
+  font-size: 70px;
+  margin: 0 10px;
+}
+
+.range__value__number--top {
+  -webkit-transform-origin: 100% 100%;
+      -ms-transform-origin: 100% 100%;
+          transform-origin: 100% 100%;
+}
+
+.range__value__number--bottom {
+  -webkit-transform-origin: 100% 0;
+      -ms-transform-origin: 100% 0;
+          transform-origin: 100% 0;
+}
+
+.range__value__text {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-size: 13px;
+  text-transform: uppercase;
+}
+
+.range__value__text span:first-child {
+  margin-bottom: 3px;
+}
+
+.range__value__text--top {
+  -webkit-align-self: flex-end;
+      -ms-flex-item-align: end;
+          align-self: flex-end;
+  margin-bottom: 13px;
+}
+
+.range__value__text--bottom {
+  margin-top: 10px;
+}

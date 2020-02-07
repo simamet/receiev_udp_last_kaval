@@ -1,0 +1,72 @@
+html
+  head
+    title MONITORING KAPAL
+    <link rel="stylesheet" href="style.css">
+<body style='background-image:url(/Kaval/BGcombine.png);background-size:cover'>
+
+  <button  id="backUI">Back to UI</button>
+   div(style="display:flex")
+      div(style="flex:0 0 100px") id 
+      div(style="flex:0 0 20px") :
+      div#id-info(style="flex:auto") #{id1}
+   
+   div(style="display:flex")
+      div(style="flex:0 0 100px") GyroX
+      div(style="flex:0 0 20px") :
+      div#gyx-inf(style="flex:auto") #{Gyx}
+   div(style="display:flex")
+      div(style="flex:0 0 100px") GyroY
+      div(style="flex:0 0 20px") :
+      div#gyy-inf(style="flex:auto") #{Gyy}
+   div(style="display:flex")
+      div(style="flex:0 0 100px") GyroZ
+      div(style="flex:0 0 20px") :
+      div#gyz-inf(style="flex:auto") #{Gyz}
+   div(style="display:flex")
+      div(style="flex:0 0 100px") GAS1
+      div(style="flex:0 0 20px") :
+      div#gs1-inf(style="flex:auto") #{gs1}
+   div(style="display:flex")
+      div(style="flex:0 0 100px") GAS2
+      div(style="flex:0 0 20px") :
+      div#gs2-inf(style="flex:auto") #{gs2}
+   div(style="display:flex")
+      div(style="flex:0 0 100px") GAS3
+      div(style="flex:0 0 20px") :
+      div#gs3-inf(style="flex:auto") #{gs3}
+   div(style="display:flex")
+      div(style="flex:0 0 100px") ultrasonic 1
+      div(style="flex:0 0 20px") :
+      div#ultra1-inf(style="flex:auto") #{ultra1}
+   div(style="display:flex")
+      div(style="flex:0 0 100px") ultrasonic 2
+      div(style="flex:0 0 20px") :
+      div#ultra2-inf(style="flex:auto") #{ultra2}
+   div(style="display:flex")
+      div(style="flex:0 0 100px") Stater
+      div(style="flex:0 0 20px") :
+      div#str-inf(style="flex:auto") #{Stater}
+   div(style="display:flex")
+      div(style="flex:0 0 100px") Pintu 1
+      div(style="flex:0 0 20px") :
+      div#pn1-inf(style="flex:auto") #{Pintu1}
+   div(style="display:flex")
+      div(style="flex:0 0 100px") Pintu 2
+      div(style="flex:0 0 20px") :
+      div#pn2-inf(style="flex:auto") #{Pintu2} 
+   <div class="denah">
+      <img src="Kaval/denah.png" style="width:400px;height:100px;" /></div> 
+      //div(style="flex:0 0 50px") 
+   <div class="ofx"> offset X :</div>
+    div#ofx-inf(class="ofxdt") #{Ofx}
+   <div class="gfx"> gyro X :</div>
+    div#gfx-inf(class="gfxdt") #{gyfx}
+   <div class="form">
+   <form name='get_offset' method="GET">
+    <input type="text" name="mytext" required />
+    <input type="submit" value="Submit" />
+    </form>
+
+   script(src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js")
+   script(src="/md/jquery/dist/jquery.min.js")
+   script(src="on.js")
