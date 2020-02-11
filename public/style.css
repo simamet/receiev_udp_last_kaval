@@ -5,6 +5,14 @@
   display:inline-block;
 }
 
+#boxroot{
+  width:100%;
+  margin:auto;
+  text-align: center;
+  display:inline-block;
+
+}
+
 #btns{
   padding:20px;
   background:#228de6;
@@ -50,12 +58,12 @@
 .samping{
   position: absolute;
   left: 280px;
-  top: 260px;
+  top: 265px;
 }
 .alrt_samping{
   position: absolute;
   left: 280px;
-  top: 260px;
+  top: 265px;
 }
 .denah{
   position: absolute;
@@ -65,12 +73,12 @@
 .pintu_denah1{
   position: absolute;
   left: 242px;
-  top: 186px;
+  top: 195px;
 }
 .pintu_denah{
   position: absolute;
   left: 242px;
-  top: 91px;
+  top: 100px;
 }
 .bbm_kiri{
   position: absolute;
@@ -247,12 +255,72 @@
   right: 270px;
   top: 147px;
 }
-.ofxdt{
-  position: absolute;
-  color: black;
-  left: 782px;
-  top: 147px;
+.calx{
+  position: relative;
+  color: WHITE;
+  left: -9px;
+  top: 51px;
 }
+.caly{
+  position: relative;
+  color:WHITE;
+  left: -9px;
+  top: 42px;
+}
+
+.bcy{
+  position: absolute;
+  color:WHITE;
+  right: -371px;
+  top : 105px;
+}
+
+.bcx{
+  position: absolute;
+  color:WHITE;
+  right: -371px;
+  top: 71px;
+}
+.blx1{
+  position: absolute;
+  color:WHITE;
+  right: -371px;
+  top: 137px;
+}
+.bly1{
+  position: absolute;
+  color:WHITE;
+  right: -371px;
+  top: 186px;
+}
+.chk1{
+  position: absolute;
+  color:WHITE;
+  right: -140px;
+  top: 72px;
+}
+
+.chk2{
+  position: absolute;
+  color:WHITE;
+  right: -140px;
+  top: 108px;
+}
+
+.alx{
+  position: relative;
+  color:WHITE;
+  left: -13px;
+  top: 40px;
+}
+
+.aly{
+  position: relative;
+  color:WHITE;
+  left: -13px;
+  top: 50px;
+}
+
 .gfx{
   position: absolute;
   color: black;
@@ -288,7 +356,7 @@
 .garis_IMU{
   position:absolute;
   left: 80px;
-  top: 336px;
+  top: 350px;
 }
 .garis_over{
   position:absolute;
@@ -314,6 +382,55 @@
   left:552px;
 }
 
+.menu{
+  position: absolute;
+  color: white;
+  left: 100px;
+  top: 70px;
+}
+.header{
+  position: absolute;
+  color: white;
+  right: -262px;
+  top: -47px;
+}
+.setting{
+  position: absolute;
+  color: white;
+  left: 380px;
+  top: 217px;
+}
+.setkonfig{
+  position: absolute;
+  color: white;
+  left: 388px;
+  top: 322px;
+}
+
+.back{
+  position: absolute;
+  color: white;
+  left: 480px;
+  top: 380px;
+}
+
+
+.bb:focus{
+  border: solid 4px red;
+
+}
+.sens{
+  position: absolute;
+  color: white;
+  left: 543px;
+  top: 322px;
+}
+.kontrol{
+  position: absolute;
+  color: white;
+  left: 547px;
+  top: 216px;
+}
 .range__wrapper {
   position: absolute;
   left: 50%;
@@ -333,6 +450,7 @@
   cursor: pointer;
   overflow: hidden;
 }
+
 
 .range__input {
   display: none;

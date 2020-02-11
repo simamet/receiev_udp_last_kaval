@@ -17,6 +17,8 @@
     "jquery": "^3.4.1",
     "key-events": "^0.1.1",
     "keypress": "^0.2.1",
+    "mongodb": "^3.5.2",
+    "mysql": "^2.18.1",
     "pug": "^2.0.4",
     "socket.io": "^2.3.0"
   }

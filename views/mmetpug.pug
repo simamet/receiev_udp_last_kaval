@@ -1,0 +1,162 @@
+
+html(lang="en")
+  
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    meta(http-equiv="X-UA-Compatible" content="ie=edge")
+    link(href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous")
+    link(rel="stylesheet" href="style.css")
+    title(MONITORING KAPAL)
+  
+
+  body
+    
+    div(id="boxes")
+        div(id='seting' style='background-image:url(/Kaval/kosong.png);background-size:cover;height:100%')
+            div(class="menu")
+                h2 INI MENU SETING :
+            div(class='setting ')
+                img(src="Kaval/seting.png" style="width:100px;height:100px;")
+            div(class="setkonfig")
+                button(id="menu1" class='bb') Konfigurasi
+            div(class='kontrol')
+                img(src="Kaval/kontrol.png" style="width:100px;height:100px;")
+            div(class="sens")
+                button(id="menu2" class='bb') Kontrol Sensor
+            div(class="back")
+                button(id="menu3" class='bb') BACK
+        div(id="menu_konfigurasi" style='background-image:url(/Kaval/kosong.png);background-size:cover;height:100%')
+            div(class="menu")
+                div(class='header')
+                    h2 INI MENU KONFIGURASI :
+                div(class='calx')
+                    h4 Cal X 
+                div(class='caly')
+                    h4 Cal Y
+                div(class='alx')
+                    h4 Allert X
+                div(class='aly')
+                    h4 Allert Y
+                form(name='calx' method="GET" class ='bcx')
+                    input(type="text" name="mytext" require)
+                    input(type="submit" value="Submit")
+                form(name='celx' method="GET" class='chk1')
+                    input(type="checkbox" id="mycheckbox1")
+                form(name='caly' method="GET" class='bcy')
+                    input(type="text" name="mytext1" require)
+                    input(type="submit" value="Submit")
+                form(name='cely' method="GET" class='chk2')
+                    input(type="checkbox" id="mycheckbox2")
+                form(name='alx' method="GET" class='blx1')
+                    input(type="text" name="mytext2" require)
+                    input(type="submit" value="Submit")
+                form(name='aly' method="GET" class='bly1')
+                    input(type="text" name="mytext2" require)
+                    input(type="submit" value="Submit")
+        div(id="menu_konfig_device" style='background-image:url(/Kaval/kosong.png);background-size:cover;height:100%')
+            div(class="menu")
+                h2 INI KONTROL DEVICE :
+
+        div(id="boxroot" style='background-image:url(/Kaval/BGcombine.png);background-size:cover;height:100%')
+            div(class="belakang") 
+                img(src="Kaval/belakang.png" style="width:100px;height:110px;")
+            div(class="alrt_belakang") 
+                img(src="Kaval/alert_imu.png" style="width:100px;height:110px;")    
+            div(class="samping")
+                img(src="Kaval/samping.png" style="width:350px;height:110px;")
+            div(class="alrt_samping")
+                img(src="Kaval/alert_samping.png" style="width:350px;height:110px;")
+            div(class="denah")
+                img(src="Kaval/denah.png" style="width:400px;height:100px;")  
+            div(class="pintu_denah")
+                img(src="Kaval/pintu_denah.png" style="width:30px;height:6px;")  
+            div(class="pintu_denah1")
+                img(src="Kaval/pintu_denah.png" style="width:30px;height:6px;")
+            div(class="over")
+                img(src="Kaval/Over_weyht.png" style="width:100px;height:110px;")  
+            div(class="garis_IMU")
+                img(src="Kaval/permukaan_air.png" style="width:575px;height:2px;")
+            div(class="garis_over")
+                img(src="Kaval/air_over.png" style="width:120px;height:2px;")
+            div(class="door")
+                img(src="Kaval/pintu_putih.png" style="width:69px;height:89px;")
+            div(class="door_alrt")
+                img(src="Kaval/pintu_merah.png" style="width:69px;height:89px;")
+            div(class="bensin")
+                img(src="Kaval/bbm_putih.png" style="width:80px;height:96px;")
+            div(class="bensin_alrt")
+                img(src="Kaval/bbm_merah.png" style="width:80px;height:96px;")
+            div(class="bbm_kiri")
+                img(src="Kaval/alert_bbm.png" style="width:14px;height:14px;")
+            div(class="bbm_kanan")
+                img(src="Kaval/alert_bbm.png" style="width:14px;height:14px;")
+            div(class="aki")
+                img(src="Kaval/aki_putih.png" style="width:66px;height:77px;")
+            div(class="aki_alrt")
+                img(src="Kaval/batre.png" style="width:66px;height:77px;")
+            div(class="pln")
+                img(src="Kaval/pln_putih.png" style="width:67px;height:72px;")
+            div(class="pln_alrt")
+                img(src="Kaval/pln.png" style="width:67px;height:72px;")
+            div(class="genset")
+                img(src="Kaval/jenset_putih.png" style="width:65px;height:73px;")
+            div(class="genset_alrt")
+                img(src="Kaval/jenset.png" style="width:65px;height:73px;")
+            div(class="alrt")
+                img(src="Kaval/system_alert.png" style="width:246px;height:112px;")
+            div(class="stts")
+                h2 Status :
+            div(class="st_pintu")
+                h4 Ada pintu yang tertutup!!
+            div(class="st_bbm")
+                h4 Uap BBM terdeteksi!!
+            div(class="st_gxkn")
+                h4 Kapal terlalu miring kanan!!
+            div(class="st_gxkr")
+                h4 Kapal terlalu miring kiri !!
+            div(class="st_gyd")
+                h4 Kapal terlalu miring kedepan !!
+            div(class="st_gyb")
+                h4 Kapal terlalu miring kebelakang !! 
+            div(class="rk")
+                h4 Rekomendasi : 
+            div(class="rk_kr")
+                h4 Geser beban ke kiri
+            div(class="rk_kn")
+                h4 Geser beban ke kanan
+            div(class="rk_d")
+                h4 Geser beban ke depan 
+            div(class="rk_b")
+                h4 Geser beban ke belakang 
+            div(class="rk_p")
+                h4 Buka pintu yang tertutup
+            div(class="rk_bbm")
+                h4 Nyalakan Exhaust
+
+            button(id="myButton" class='bb') SETTING
+            
+
+            div(class="overweight_text") OVERWEIGHT
+            
+            div#ultra2-inf(class="over_dt") #{ultra2}
+            div(class="roll") ROLL :
+            div#gyxx-inf(class="roll_dt")   #{Gyxx}
+            div(class="pitch") PITCH :
+            div#gyyy-inf(class="pitch_dt")  #{Gyyy}
+           
+  script(src="anime.min.js")
+  script(src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js")
+  script(src="/md/jquery/dist/jquery.min.js")
+  script(src="main.js")
+
+
+     
+
+
+
+
+ 
+
+
+ 

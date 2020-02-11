@@ -2,6 +2,26 @@
 var socket=io();
 var idElm,gx,gy,gz,g1,g2,u1,u2,st,p1,p2,myText;
 
+document.addEventListener("keydown", function(event) {
+  console.log(event.which);
+  if(event.which=='13')
+  {
+    
+  	$.get('/mamet',function(data){
+    var carli= data;
+     console.log($(data));
+     document.body.style.backgroundImage="url('/Kaval/kosong.png')";
+     document.getElementsByTagName('body')[0].innerHTML = carli;
+    //});
+    
+  })
+    //location.assign('http://localhost:3000/mamet')
+  }
+  else if(event.which=='40')
+  {
+    location.assign('http://localhost:3000/ucok')
+  }
+})
 
 $(document).ready(()=>{
     idElm = $('#id-info'),
@@ -59,17 +79,3 @@ button.addEventListener('click', function(e) {
   console.log('button was clicked');
 
 });
-
-function myFunction() {
-  // Get the checkbox
-  var checkBox = document.getElementById("myCheck");
-  // Get the output text
-  var text = document.getElementById("text");
-
-  // If the checkbox is checked, display the output text
-  if (checkBox.checked == true){
-    text.style.display = "block";
-  } else {
-    text.style.display = "none";
-  }
-} 

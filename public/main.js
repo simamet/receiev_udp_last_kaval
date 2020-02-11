@@ -63,27 +63,168 @@
 // var http = require('http').createServer(app);
 // var io = require('socket.io')(http);1111111
 var socket=io();
-var idElm,gx,gy,gz,g1,g2,g3,u1,u2,u221,st,p1,p2,ggx,ggy,u22,wrxkn,wrxkr,wryd,wryb,wrb;
-var rangeValue = //parseInt(rangeInput.value);
-
+var idElm,gx,gy,gz,g1,g2,g3,u1,u2,u221,st,p1,p2,ggx,ggy,u22,wrxkn,wrxkr,wryd,wryb,wrb,wrak,wrpln,wrgn,warnb;
+var rangeValue = 0; //parseInt(rangeInput.value);
+var sub=1;
 
 console.log('Client-side code running');
 
+document.addEventListener("keydown", function(event) {
+  console.log(event.which);
+  switch(event.which) {
+    case 39: // le
+   geserkk();
+   break;
+  
+   case 40: // le
+   Seting();
+   break;
+
+   case 38: // le
+   blur();
+   break;
+  
+  }
+   
+ 
+   /*
+  if(event.which=='37')
+  {
+    
+   // document.body.style.backgroundImage="url('/Kaval/kosong.png')";
+  	//$.get('/mamet',function(data){
+    //  var carli= $(data).find("#boxroot");
+    //  console.log(carli)
+      $('#boxroot').hide();
+      $('#menu_konfigurasi').hide();
+      $('#menu_konfig_device').hide();
+      $('#seting').show();
+     // $('#boxes').append($(carli));
+ 
+     //document.getElementById('boxes').innerHTML = carli;
+    //});
+    
+  //})
+    //location.assign('http://localhost:3000/mamet')
+  }*/
+ /*if(event.which=='37')
+  {
+   // $.get('/ucok',function(data){
+     // var carli= $(data).find("#boxroot");
+     // console.log(carli)
+      $('#seting').hide();
+      $('#menu_konfigurasi').hide();
+      $('#menu_konfig_device').hide();
+      $('#boxroot').show();
+     // $('#boxes').append($(carli));
+  //});
+}*/
+});
+
+
+$('form[name="calx"]').click((e)=>{
+  e.preventDefault();
+  var cek=document.getElementById('mycheckbox1');
+  myText=$('input[name="mytext"]').val();
+if(cek.checked==true){
+  myText=myText*-1;
+}
+else{
+  myText=Math.abs(myText)
+  console.log(myText)
+}
+  $('#ofx-inf').text(myText)
+  socket.emit('calx',myText,(res)=>{
+    console.log(res);
+  })
+  
+})
+
+
+
+$('form[name="caly"]').click((e)=>{
+  e.preventDefault();
+  var cek1=document.getElementById('mycheckbox2');
+  myText1=$('input[name="mytext1"]').val();
+  if(cek1.checked==true){
+  myText1=myText1*-1;
+  }
+  else{
+    myText1=Math.abs(myText1);
+  }
+  $('#ofx-inf').text(myText1)
+  socket.emit('caly',myText1,(res)=>{
+    console.log(res);
+  })
+  
+})
+
+
+function Seting() { 
+  document.getElementById('myButton').focus();
+}
+
+function blur() { 
+  document.getElementById('myButton').blur();
+}
+
+function geserkk() { 
+document.getElementById('menu'+sub).focus();
+sub+=1;
+if (sub>'3')
+{
+
+  sub=1;
+  console.log(sub)
+}
+} 
 var button = document.getElementById('myButton');
 button.addEventListener('click', function(e) {
- location.assign('http://localhost:3000/mamet');
-  console.log('button was clicked');
+  $('#boxroot').hide();
+  $('#menu_konfigurasi').hide();
+  $('#menu_konfig_device').hide();
+  $('#seting').show();
 /*  $.get('/mamet',function(data){
 console.log(data);
   });*/
 });
 
+var button = document.getElementById('menu1');
+button.addEventListener('click', function(e) {
+  $('#boxroot').hide();
+  $('#seting').hide();
+  $('#menu_konfig_device').hide();
+  $('#menu_konfigurasi').show();
+
+  //$('#seting').show();
+ // alert("ini menu 1")
+});
+var button = document.getElementById('menu2');
+button.addEventListener('click', function(e) {
+  $('#boxroot').hide();
+  $('#seting').hide();
+  $('#menu_konfigurasi').hide();
+  $('#menu_konfig_device').show();
+  
+  //$('#seting').show();
+ // alert("ini menu 1")
+});
+
+var button = document.getElementById('menu3');
+button.addEventListener('click', function(e) {
+  $('#seting').hide();
+  $('#menu_konfigurasi').hide();
+  $('#menu_konfig_device').hide();
+  $('#boxroot').show();
+  
+});
 
 
 $(document).ready(()=>{
+  
     idElm = $('#id-info'),
-    gx=$('#gyx-inf'),
-    gy=$('#gyy-inf'),
+    gx=$('#gyxx-inf'),
+    gy=$('#gyyy-inf'),
     gz=$('#gyz-inf'),
     u1=$('#ultra1-inf'),
     u2=$('#ultra2-inf'),
@@ -93,9 +234,14 @@ $(document).ready(()=>{
     st=$('#str-inf'),
     p1=$('#pn1-inf'),
     p2=$('#pn2-inf')
+
+    $('#seting').hide();
+    $('#menu_konfigurasi').hide();
+    $('#menu_konfig_device').hide();
    // $(idElm).text("ini id nya");
   //  console.log($(u1).text());
 });
+
 socket.on('ucok',function(data){
     //console.log(data)
       //g1=data.GAS1,
@@ -112,15 +258,54 @@ socket.on('ucok',function(data){
      $(st).text(data.Stater);
      $(p1).text(data.Pintu1);
      $(p2).text(data.Pintu2);
+     //console.log(gx);
      ggx=data.Gyx.toFixed(1);
      ggy=data.Gyy.toFixed(1);
      u22=data.ultra2;
      u221=data.ultra2/10;
      $(u2).text(u221);
-     wrxkn=data.warningxkn;
-     wrxkr=data.warningxkr;
-     wryd=data.warningyd;
-     wryb=data.warningyb;
+     if (ggx>10)
+     {
+      wrxkn=1.0;
+     }
+     else{
+      wrxkn=0.0;
+     }
+      if (ggx< (-10))
+     {
+      wrxkr=1.0;
+     }
+     else{
+      wrxkr=0.0;
+     }
+     if (ggy>10)
+     {
+      wryd=1.0;
+     }
+     else{
+      wryd=0.0;
+     }
+      if (ggy< (-10))
+     {
+      wryb=1.0;
+     }
+     else{
+      wryb=0.0;
+     }
+     if(data.GAS1>1||data.GAS2>1||data.GAS3>1)
+     {
+       warnb=1;
+     }
+     else
+     {
+       warnb=0;
+     }
+     //wryd=data.warningyd;
+     // wryb=data.warningyb;
+
+     wrak=data.warningak;
+     wrpln=data.warningpln
+     wrgn=data.warninggn;
      
     // console.log(u2);
     
@@ -190,13 +375,14 @@ socket.on('ucok',function(data){
             anime({
                 targets:'div.alrt_belakang',
                 opacity:wrxkn||wrxkr,
+                duration: 0,
                 rotate:{
                         value: ggx,
                         
                         duration: 0,
                         easing: 'linear'
                      }      
-              })
+              });
             anime({
               targets:'div.samping',
               rotate:{
@@ -204,117 +390,132 @@ socket.on('ucok',function(data){
                       duration: 0,
                       easing: 'linear'
                    }
-            })
+            });
             anime({
                 targets:'div.alrt_samping',
                 opacity:wryd||wryb,
+                duration: 0,
                 rotate:{
                         value: ggy,
                         duration: 0,
                         easing: 'linear'
                      }
-              })
+              });
             
             anime({
                 targets:'div.pintu_denah',
                 opacity:data.Pintu2,
-               
-              })
+                duration: 0,
+              });
 
             anime({
                 targets:'div.pintu_denah1',
                 opacity:data.Pintu1,
-               
-              })
+                duration: 0,
+              });
               anime({
                 targets:'div.door_alrt',
                 opacity:data.Pintu1||data.Pintu2,
-               
-              })
+                duration: 0,
+              });
               anime({
                 targets:'div.bensin_alrt',
-                opacity:data.warningb,
-               
-              })
+                opacity:warnb,
+                duration: 0,
+              });
               anime({
                 targets:'div.alrt',
                 opacity:data.Pintu1||data.Pintu2||data.warningb||wrxkn||wrxkr||wryd||wryb,
-               
+                duration: 0,
               })
               anime({
                 targets:'div.st_pintu',
                 opacity:data.Pintu1||data.Pintu2,
-               
+                duration: 0,
               })
             anime({
                 targets:'div.bbm_kiri',
-                opacity:data.GAS2
-               
+                opacity:data.GAS2,
+                duration: 0,
               })
               anime({
                 targets:'div.bbm_kanan',
-                opacity:data.GAS1
-               
+                opacity:data.GAS1,
+                duration: 0,
               })
               anime({
                 targets:'div.st_bbm',
-                opacity:data.warningb,
-               
+                opacity:warnb,
+                duration: 0,
               })
               anime({
                 targets:'div.st_gxkn',
-                opacity:data.warningxkn,
-               
+                opacity:wrxkn,
+                duration: 0,
               })
 
             anime({
                 targets:'div.st_gxkr',
-                opacity:data.warningxkr,
-               
+                opacity:wrxkr,
+                duration: 0,
               })
 
               anime({
                 targets:'div.st_gyd',
-                opacity:data.warningyd,
-               
+                opacity:wryd,
+                duration: 0,
               })
 
               anime({
                 targets:'div.st_gyb',
-                opacity:data.warningyb,
-               
+                opacity:wryb,
+                duration: 0,
               })
               anime({
                 targets:'div.rk_kr',
-                opacity:data.warningxkn,
-               
+                opacity:wrxkn,
+                duration: 0,
               })
               anime({
                 targets:'div.rk_kn',
-                opacity:data.warningxkr,
-               
+                opacity:wrxkr,
+                duration: 0,
               })
               anime({
                 targets:'div.rk_d',
-                opacity:data.warningyb,
-               
+                opacity:wryb,
+                duration: 0,
               })
               anime({
                 targets:'div.rk_b',
-                opacity:data.warningyd,
-               
+                opacity:wryd,
+                duration: 0,
               })
               anime({
                 targets:'div.rk_p',
                 opacity:data.Pintu1||data.Pintu2,
-               
+                duration: 0,
               })
               anime({
                 targets:'div.rk_bbm',
-                opacity:data.warningb,
-               
+                opacity:warnb,
+                duration: 0,
               })
-
+              anime({
+                targets:'div.genset_alrt',
+                opacity:data.warninggn,
+                duration: 0,
+              })
+              anime({
+                targets:'div.pln_alrt',
+                opacity:wrpln, 
+                duration: 0,
+              })
+              anime({
+                targets:'div.aki_alrt',
+                opacity:data.warningak,
+                duration: 0,
+              })
 
 
 
@@ -439,3 +640,4 @@ socket.on('ucok',function(data){
 
 
 
+  
