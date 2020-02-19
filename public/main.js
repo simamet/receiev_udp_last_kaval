@@ -65,23 +65,28 @@
 var socket=io();
 var idElm,gx,gy,gz,g1,g2,g3,u1,u2,u221,st,p1,p2,ggx,ggy,u22,wrxkn,wrxkr,wryd,wryb,wrb,wrak,wrpln,wrgn,warnb;
 var rangeValue = 0; //parseInt(rangeInput.value);
-var sub=1;
+var sub = 11;
+var sub1;
 
 console.log('Client-side code running');
 
 document.addEventListener("keydown", function(event) {
   console.log(event.which);
   switch(event.which) {
-    case 39: // le
-   geserkk();
+   case 39: // le
+   geser_kanan();
+   break;
+
+   case 37:
+   geser_kiri();
    break;
   
    case 40: // le
-   Seting();
+   geser_bawah();
    break;
 
    case 38: // le
-   blur();
+   geser_atas();
    break;
   
   }
@@ -122,9 +127,15 @@ document.addEventListener("keydown", function(event) {
 });
 
 
+$('input:checkbox').keypress(function(e){
+  if((e.keyCode ? e.keyCode : e.which) == 13){
+    $(this).trigger('click');
+  }
+})
+
 $('form[name="calx"]').click((e)=>{
   e.preventDefault();
-  var cek=document.getElementById('mycheckbox1');
+  var cek=document.getElementById('menukonfig11');
   myText=$('input[name="mytext"]').val();
 if(cek.checked==true){
   myText=myText*-1;
@@ -144,7 +155,7 @@ else{
 
 $('form[name="caly"]').click((e)=>{
   e.preventDefault();
-  var cek1=document.getElementById('mycheckbox2');
+  var cek1=document.getElementById('menukonfig21');
   myText1=$('input[name="mytext1"]').val();
   if(cek1.checked==true){
   myText1=myText1*-1;
@@ -159,47 +170,99 @@ $('form[name="caly"]').click((e)=>{
   
 })
 
+function geser_bawah() {
+  document.getElementById('myButton').focus();
+  sub1 = sub;
+  while (sub1 > 10) {
+    sub1 = sub1 - 10;
+  }
+  sub = (sub + 10)-(sub1-1); 
+  document.getElementById('menusetting'+sub).focus();
+  document.getElementById('menukonfig'+sub).focus();
+}
+
+function geser_kanan() {
+  document.getElementById('myButton').focus();
+  if (sub==1){
+    document.getElementById('menusetting11').focus();
+    sub = 11;
+  }
+  else{
+    sub = sub+1;
+    document.getElementById('menusetting'+sub).focus();
+  } 
+}
+
+function geser_kiri() {
+  document.getElementById('myButton').focus();
+  if (sub==1){
+    document.getElementById('menusetting11').focus();
+    sub = 11;
+  }
+  else{
+    sub = sub-1;
+    document.getElementById('menusetting'+sub).focus();
+  }
+}
+
+function geser_atas() {
+  document.getElementById('myButton').focus();
+  if (sub==1){
+    document.getElementById('menusetting11').focus();
+    sub = 11;
+  }
+  else{
+    sub1 = sub;
+    while (sub1 > 10){
+      sub1 = sub1 -10;
+    }
+    sub = (sub - 10)-(sub1-1);
+    document.getElementById('menusetting'+sub).focus();
+  }
+}
 
 function Seting() { 
   document.getElementById('myButton').focus();
+  document.getElementById('menukonfig11').focus();
 }
 
 function blur() { 
   document.getElementById('myButton').blur();
 }
 
-function geserkk() { 
-document.getElementById('menu'+sub).focus();
-sub+=1;
-if (sub>'3')
-{
-
-  sub=1;
-  console.log(sub)
-}
-} 
+// function geserkk() { 
+// document.getElementById('menu'+sub).focus();
+// sub+=1;
+// if (sub>'3')
+// {
+//   sub=1;
+//   console.log(sub)
+// }
+// } 
 var button = document.getElementById('myButton');
 button.addEventListener('click', function(e) {
   $('#boxroot').hide();
   $('#menu_konfigurasi').hide();
   $('#menu_konfig_device').hide();
   $('#seting').show();
+  sub=1;
 /*  $.get('/mamet',function(data){
 console.log(data);
   });*/
 });
 
-var button = document.getElementById('menu1');
+var button = document.getElementById('menusetting11');
 button.addEventListener('click', function(e) {
   $('#boxroot').hide();
   $('#seting').hide();
   $('#menu_konfig_device').hide();
   $('#menu_konfigurasi').show();
+  sub=1;
 
   //$('#seting').show();
  // alert("ini menu 1")
 });
-var button = document.getElementById('menu2');
+var button = document.getElementById('menusetting12');
 button.addEventListener('click', function(e) {
   $('#boxroot').hide();
   $('#seting').hide();
@@ -210,7 +273,7 @@ button.addEventListener('click', function(e) {
  // alert("ini menu 1")
 });
 
-var button = document.getElementById('menu3');
+var button = document.getElementById('menusetting21');
 button.addEventListener('click', function(e) {
   $('#seting').hide();
   $('#menu_konfigurasi').hide();
