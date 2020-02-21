@@ -66,7 +66,7 @@ var socket=io();
 var idElm,gx,gy,gz,g1,g2,g3,u1,u2,u221,st,p1,p2,ggx,ggy,u22,wrxkn,wrxkr,wryd,wryb,wrb,wrak,wrpln,wrgn,warnb;
 var rangeValue = 0; //parseInt(rangeInput.value);
 var sub = 11;
-var sub1;
+var sub1,sub2,pageid,submin1,limit;
 
 console.log('Client-side code running');
 
@@ -172,24 +172,103 @@ $('form[name="caly"]').click((e)=>{
 
 function geser_bawah() {
   document.getElementById('myButton').focus();
-  sub1 = sub;
-  while (sub1 > 10) {
-    sub1 = sub1 - 10;
+  if (sub==1){
+    document.getElementById('menusetting11').focus();
+    document.getElementById('menukonfig11').focus();
+    sub = 11;
   }
-  sub = (sub + 10)-(sub1-1); 
-  document.getElementById('menusetting'+sub).focus();
-  document.getElementById('menukonfig'+sub).focus();
+  else{
+    sub1 = sub;
+    sub2 = 0;
+    while (sub1 > 10) {
+      sub1 = sub1 - 10;
+      sub2 = sub2 + 1;
+    }
+    sub = (sub+10)-(sub1-1);
+    switch (pageid) {
+      case 1: //do nothing
+      break;
+      case 2:
+        if (sub2 <= 1){
+          submin1 = sub;
+          document.getElementById('menusetting'+sub).focus();
+        } 
+        else {
+          sub = submin1;
+        }
+      break;
+      case 3:
+        if (sub2 <= 3){
+          submin1 = sub;
+          document.getElementById('menukonfig'+sub).focus();
+        }
+        else {
+          sub = submin1;
+        }
+      break;
+    }
+  } 
 }
 
 function geser_kanan() {
   document.getElementById('myButton').focus();
   if (sub==1){
     document.getElementById('menusetting11').focus();
+    document.getElementById('menukonfig11').focus();
     sub = 11;
   }
   else{
+    sub1 = sub;
+    sub2 = 0;
+    while (sub1 > 10){
+      sub1 = sub1 - 10;
+      sub2 = sub2 + 1;
+    }
     sub = sub+1;
-    document.getElementById('menusetting'+sub).focus();
+    switch (pageid) {
+      case 1: //do nothing
+      break;
+      case 2:
+        switch (sub2) {
+          case 1: 
+            limit = 12;
+          break;  
+          case 2: 
+            limit = 21;
+          break;  
+        }
+        if (sub <= limit){
+          submin1 = sub;
+          document.getElementById('menusetting'+sub).focus();
+        }
+        else {
+          sub = submin1;
+        }
+      break;
+      case 3:
+        switch (sub2){
+          case 1:
+            limit = 13;
+          break;
+          case 2:
+            limit = 23;
+          break;
+          case 3:
+            limit = 32;
+          break;
+          case 4:
+            limit = 42;
+          break;
+        }
+        if (sub <= limit){
+          submin1 = sub;
+          document.getElementById('menukonfig'+sub).focus();
+        }
+        else {
+          sub = submin1;
+        } 
+      break;  
+    }
   } 
 }
 
@@ -197,11 +276,62 @@ function geser_kiri() {
   document.getElementById('myButton').focus();
   if (sub==1){
     document.getElementById('menusetting11').focus();
+    document.getElementById('menukonfig11').focus();
     sub = 11;
   }
   else{
+    sub1 = sub;
+    sub2 = 0;
+    while (sub1 > 10){
+      sub1 = sub1 - 10;
+      sub2 = sub2 + 1;
+    }
     sub = sub-1;
-    document.getElementById('menusetting'+sub).focus();
+    switch (pageid) {
+      case 1: //do nothing
+      break;
+      case 2:
+        switch (sub2){
+          case 1:
+            limit = 11;
+          break;
+          case 2:
+            limit = 21;
+          break;
+        }
+        if (sub >= limit){
+          submin1 = sub;
+          document.getElementById('menusetting'+sub).focus();
+        }
+        else {
+          sub = submin1;
+        }
+      break;
+      case 3:
+        switch (sub2){
+          case 1:
+            limit = 11;
+          break;
+          case 2:
+            limit = 21;
+          break;
+          case 3:
+            limit = 31;
+          break;
+          case 4:
+            limit = 41;
+          break;
+        }
+        if (sub >= limit){
+          submin1 = sub;
+          document.getElementById('menukonfig'+sub).focus();
+        }
+        else {
+          sub = submin1;
+        }
+      break;
+
+    }
   }
 }
 
@@ -209,15 +339,38 @@ function geser_atas() {
   document.getElementById('myButton').focus();
   if (sub==1){
     document.getElementById('menusetting11').focus();
+    document.getElementById('menukonfig11').focus();
     sub = 11;
   }
   else{
     sub1 = sub;
     while (sub1 > 10){
-      sub1 = sub1 -10;
+      sub1 = sub1 - 10;
     }
-    sub = (sub - 10)-(sub1-1);
-    document.getElementById('menusetting'+sub).focus();
+    sub = (sub - 10)-(sub1 - 1);
+    switch (pageid) {
+      case 1: //do nothing
+      break;
+      case 2:
+        if (sub >= 11){
+          submin1 = sub;
+          document.getElementById('menusetting'+sub).focus();
+        }
+        else {
+          sub = submin1;
+        }
+      break;
+      case 3:
+        if (sub >= 11){
+          submin1 = sub;
+          document.getElementById('menukonfig'+sub).focus();
+        }
+        else {
+          sub = submin1;
+        }
+      break;
+
+    }
   }
 }
 
@@ -246,6 +399,7 @@ button.addEventListener('click', function(e) {
   $('#menu_konfig_device').hide();
   $('#seting').show();
   sub=1;
+  pageid=2;
 /*  $.get('/mamet',function(data){
 console.log(data);
   });*/
@@ -258,6 +412,7 @@ button.addEventListener('click', function(e) {
   $('#menu_konfig_device').hide();
   $('#menu_konfigurasi').show();
   sub=1;
+  pageid=3;
 
   //$('#seting').show();
  // alert("ini menu 1")
@@ -268,7 +423,7 @@ button.addEventListener('click', function(e) {
   $('#seting').hide();
   $('#menu_konfigurasi').hide();
   $('#menu_konfig_device').show();
-  
+  pageid=4;
   //$('#seting').show();
  // alert("ini menu 1")
 });
@@ -279,6 +434,7 @@ button.addEventListener('click', function(e) {
   $('#menu_konfigurasi').hide();
   $('#menu_konfig_device').hide();
   $('#boxroot').show();
+  pageid=1;
   
 });
 
@@ -301,6 +457,7 @@ $(document).ready(()=>{
     $('#seting').hide();
     $('#menu_konfigurasi').hide();
     $('#menu_konfig_device').hide();
+    pageid=1;
    // $(idElm).text("ini id nya");
   //  console.log($(u1).text());
 });
